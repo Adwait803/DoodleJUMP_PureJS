@@ -37,9 +37,7 @@ If you want to contribute to the development of the game, follow these steps:
 2. Make your changes and improvements.
 3. Submit a pull request.
 
-## Credits
 
-- [Your Name]
 
 ## License
 

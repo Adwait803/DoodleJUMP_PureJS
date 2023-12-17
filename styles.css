@@ -82,6 +82,8 @@ h1 {
 button {
     font-size: 16px;
     padding: 10px;
+    cursor: pointer;
+    margin: 0 5px; 
 }
 
   

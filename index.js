@@ -176,7 +176,35 @@ document.addEventListener('DOMContentLoaded',() =>{
         };
       }
       
-     
+        function setupButtonControls() {
+        // Event listeners for left and right buttons on desktop
+        leftButton.addEventListener('click', () => {
+            moveLeft();
+        });
+
+        rightButton.addEventListener('click', () => {
+            moveRight();
+        });
+
+        // Event listeners for left and right buttons on mobile
+        leftButton.addEventListener('touchstart', (event) => {
+            event.preventDefault(); // Prevent default touch behavior
+            moveLeft();
+        });
+
+        leftButton.addEventListener('touchend', () => {
+            moveStraight();
+        });
+
+        rightButton.addEventListener('touchstart', (event) => {
+            event.preventDefault(); // Prevent default touch behavior
+            moveRight();
+        });
+
+        rightButton.addEventListener('touchend', () => {
+            moveStraight();
+        });
+    }
 
   
     function control(e){
@@ -212,25 +240,11 @@ document.addEventListener('DOMContentLoaded',() =>{
         createDoodler()
         setInterval(movePlatform,40)
         jump()
+        setupButtonControls();
         document.addEventListener('keyup',control)
         document.addEventListener('keydown', preventDefaultForArrowKeys);
         document.addEventListener('keydown', debounce(preventDefaultForArrowKeys, 100));
-          // Event listeners for left and right buttons
-       leftButton.addEventListener('touchstart', () => {
-           moveLeft();
-       });
-   
-       leftButton.addEventListener('touchend', () => {
-           moveStraight();
-       });
-   
-       rightButton.addEventListener('touchstart', () => {
-           moveRight();
-       });
-   
-       rightButton.addEventListener('touchend', () => {
-           moveStraight();
-       });
+       
 
     }
    }

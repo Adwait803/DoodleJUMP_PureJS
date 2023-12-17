@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded',() =>{
    const grid = document.querySelector('.grid')
    const doodler= document.createElement('div')
+   const leftButton = document.getElementById('leftButton');
+   const rightButton = document.getElementById('rightButton');
    let isGameOver = false
    let doodlerLeftSpace = 50
    let startPoint=150
@@ -174,25 +176,9 @@ document.addEventListener('DOMContentLoaded',() =>{
         };
       }
       
-     const leftButton = document.getElementById('leftButton');
-    const rightButton = document.getElementById('rightButton');
+     
 
-    // Event listeners for left and right buttons
-    leftButton.addEventListener('touchstart', () => {
-        moveLeft();
-    });
-
-    leftButton.addEventListener('touchend', () => {
-        moveStraight();
-    });
-
-    rightButton.addEventListener('touchstart', () => {
-        moveRight();
-    });
-
-    rightButton.addEventListener('touchend', () => {
-        moveStraight();
-    });
+  
     function control(e){
 
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp') {
@@ -229,6 +215,22 @@ document.addEventListener('DOMContentLoaded',() =>{
         document.addEventListener('keyup',control)
         document.addEventListener('keydown', preventDefaultForArrowKeys);
         document.addEventListener('keydown', debounce(preventDefaultForArrowKeys, 100));
+          // Event listeners for left and right buttons
+       leftButton.addEventListener('touchstart', () => {
+           moveLeft();
+       });
+   
+       leftButton.addEventListener('touchend', () => {
+           moveStraight();
+       });
+   
+       rightButton.addEventListener('touchstart', () => {
+           moveRight();
+       });
+   
+       rightButton.addEventListener('touchend', () => {
+           moveStraight();
+       });
 
     }
    }

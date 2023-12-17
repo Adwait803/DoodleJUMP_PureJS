@@ -174,7 +174,25 @@ document.addEventListener('DOMContentLoaded',() =>{
         };
       }
       
-      
+     const leftButton = document.getElementById('leftButton');
+    const rightButton = document.getElementById('rightButton');
+
+    // Event listeners for left and right buttons
+    leftButton.addEventListener('touchstart', () => {
+        moveLeft();
+    });
+
+    leftButton.addEventListener('touchend', () => {
+        moveStraight();
+    });
+
+    rightButton.addEventListener('touchstart', () => {
+        moveRight();
+    });
+
+    rightButton.addEventListener('touchend', () => {
+        moveStraight();
+    });
     function control(e){
 
         if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp') {
@@ -200,6 +218,7 @@ document.addEventListener('DOMContentLoaded',() =>{
        clearInterval(leftTimerId)
        clearInterval(rightTimerId)
     }
+   
 
    function start(){
     if(!isGameOver){
